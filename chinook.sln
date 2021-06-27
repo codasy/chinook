@@ -8,6 +8,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{5E291D8F-4986-4D24-BE15-D4BA1C3A4A29}"
 	ProjectSection(SolutionItems) = preProject
 		app.db = app.db
+		config.py = config.py
 		run.py = run.py
 	EndProjectSection
 EndProject
