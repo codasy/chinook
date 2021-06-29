@@ -1,0 +1,30 @@
+{% extends "index.html" %}
+{% block navlinks %}
+    <li> <a href="{{url_for('home')}}">Accueil</a> </li>
+    <li> <a href="{{url_for('clients')}}">Clients</a> </li>
+    <li class="active"> <a href="{{url_for('employes')}}"> Employés</a> </li>
+    <li> <a href="{{url_for('addcommand')}}">Commander</a> </li>
+{% endblock %}
+{% block header%}
+        <!-- header inner -->
+        <div class="headersHome">
+            <div class="headersHomeTitles">
+                <span>LISTE DES EMPLOYÉS</span>
+            </div>
+        </div>
+
+{% block contents %}
+<div class="tableau">
+    {% for employe in employes %}
+        <div class="caseTableau">
+            <div class="imgCase">
+              <img class="personImg" src="{{url_for('static', filename='images/anonym.jpeg')}}"/>
+            </div>
+            <div class="titreCase">
+                <span><a href="{{url_for('employe', employeId=employe.employee_id)}}">{{employe.first_name}} {{employe.last_name}}</a></span>
+            </div>
+        </div>
+    {% endfor %}
+</div>
+{% endblock %}
+{% endblock %}

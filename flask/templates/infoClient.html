@@ -1,0 +1,19 @@
+{% extends "index.html" %}
+{% block navlinks %}
+    <li> <a href="{{url_for('home')}}">Accueil</a> </li>
+    <li class="active"> <a href="{{url_for('clients')}}">Clients</a> </li>
+    <li> <a href="{{url_for('employes')}}"> Employés</a> </li>
+    <li> <a href="{{url_for('addcommand')}}">Commander</a> </li>
+{% endblock %}
+{% block header%}
+{% for client in leClient %}
+        <!-- header inner -->
+        <div class="headersHome">
+            <div class="headersHomeTitles">
+                <span class="infoClientTitle">INFORMATION DU CLIENT </span>   <span>{{client.first_name}} {{client.last_name}}</span>
+            </div>
+        </div>
+{% endfor %}
+
+
+{% endblock %}
