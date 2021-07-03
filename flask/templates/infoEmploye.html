@@ -10,10 +10,66 @@
         <!-- header inner -->
         <div class="headersHome">
             <div class="headersHomeTitles">
-                <span class="infoClientTitle">INFORMATION DE L'EMPLOYÉ</span>  <span>{{employe.first_name}} {{employe.last_name}}</span>
+                <span class="infoClientTitle">INFORMATIONS DE L'EMPLOYÉ  </span>   <span>{{employe.first_name}} {{employe.last_name}}</span>
             </div>
         </div>
 {% endfor %}
+        <div class="blockCoordClient">
+            <div class="titleCoordClient">
+        
+                <span>Coordonnées de l'employé</span>
+            </div>
+            <div class="listCoordClient">
+                {% for employe in unEmploye %}
 
+                    <span>Nom : {{employe.first_name}}</span><br>
+                    <span>Prenom : {{employe.last_name}}</span><br>
+                    <span>Email : {{employe.email}}</span><br>
+                    <span>Téléphone : {{employe.phone}}</span><br>
+                    <span>Adresse : {{employe.address}}</span><br>
+                    <span>Code postale : {{employe.postal_code}}</span><br>
+                    <span>Ville : {{employe.city}}</span><br>
+                    
 
+                {% endfor%}
+                {% for leManager in manager %}
+                    {% if leManager.reports_to %}
+
+                    <span class="manager">Manager : {{leManager.reports_to.first_name}} {{leManager.reports_to.last_name}}</span><br>
+
+                    {% else %}
+
+                    <span class="manager">Manager : Aucun</span><br>
+
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+        <div class="listClientsTitle">
+            <span>Liste de ses clients</span>
+        </div>
+        <div class="tableau">
+    {% if nomClients %}
+    {% for nomClient in nomClients %}
+    
+        <div class="caseTableau">
+            <div class="imgCase">
+              <img class="personImg" src="{{url_for('static', filename='images/anonym.jpeg')}}"/>
+            </div>
+            <div class="titreCase">
+                <span><a href="{{url_for('client', clientId=nomClient.customer_id)}}">{{nomClient.first_name}} {{nomClient.last_name}}</a></span>
+            </div>
+        </div>
+    
+        
+    
+    
+    {% endfor %}
+    {% else %}
+        <div class="emptyClients">
+            <span>Cet employé ne prend en charge aucun client !</span>
+        </div>
+
+    {% endif %}
+</div>
 {% endblock %}

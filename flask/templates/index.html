@@ -98,7 +98,7 @@
                     <img class="personImg" src="{{url_for('static', filename='images/anonym.jpeg')}}"/>
                 </div>
                 <div class="titreCase">
-                    <span><a href="">{{artist.name}}</a></span>
+                    <span><a href="{{url_for('artiste', artistId=artist.artist_id)}}">{{artist.name}}</a></span>
                 </div>
             </div>
             {% endfor %}
@@ -116,7 +116,7 @@
                     <img src="{{url_for('static', filename='images/logo.jpg')}}"/>
                 </div>
                 <div class="titreCase">
-                    <span><a href="">{{album.title}}</a></span>
+                    <span><a href="{{url_for('album', albumId=album.album_id)}}">{{album.title}}</a></span>
                 </div>
             </div>
             {% endfor %} 
@@ -133,7 +133,7 @@
                     <img src="{{url_for('static', filename='images/logo.jpg')}}"/>
                 </div>
                 <div class="titreCase">
-                    <span> <a href="">{{genre.name}}</a></span>
+                    <span> <a href="{{url_for('genre', genreId=genre.genre_id)}}">{{genre.name}}</a></span>
                 </div>
             </div>
         {% endfor %}

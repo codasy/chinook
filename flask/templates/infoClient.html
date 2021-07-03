@@ -10,10 +10,48 @@
         <!-- header inner -->
         <div class="headersHome">
             <div class="headersHomeTitles">
-                <span class="infoClientTitle">INFORMATION DU CLIENT </span>   <span>{{client.first_name}} {{client.last_name}}</span>
+                <span class="infoClientTitle">INFORMATIONS DU CLIENT </span>   <span>{{client.first_name}} {{client.last_name}}</span>
             </div>
         </div>
 {% endfor %}
+{% block contents %}
+        <div class="blockCoordClient">
+            <div class="titleCoordClient">
+        
+                <span>Coordonnées du client</span>
+            </div>
+            <div class="listCoordClient">
+                {% for client in leClient %}
+
+                    <span>Nom : {{client.first_name}}</span><br>
+                    <span>Prenom : {{client.last_name}}</span><br>
+                    <span>Email : {{client.email}}</span><br>
+                    <span>Téléphone : {{client.phone}}</span><br>
+                    <span>Adresse : {{client.address}}</span><br>
+                    <span>Code postale : {{client.postal_code}}</span><br>
+                    <span>Ville : {{client.city}}</span><br>
+
+                {% endfor%}
+            </div>
+        </div>
+        <div class="blockCommandesClient">
+            <div class="titleCommandesClient">
+        
+                <span>Commandes du client</span>
+            </div>
+            
+            <div class="listCommandesClient">
+                {% for cmdClient in lesCmdClient %}
+                {% for client in leClient %}
+
+                    <span><a href="{{url_for('commande', commandId=cmdClient.invoice_id, clientId=client.customer_id)}}">Commande N°{{cmdClient.invoice_id}}</a></span><br>
+
+                {% endfor %}
+                {% endfor %}
+            </div>
+        </div>
+        
 
 
+{% endblock %}
 {% endblock %}

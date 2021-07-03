@@ -1372,8 +1372,87 @@
      color:white;
 }
 
-.infoClientTitle{
+.infoClientTitle, .infoArtistTitle, .infoAlbumTitle{
     margin-right: 20px;
+}
+
+
+.blockCoordClient{
+     float:left;
+     
+     border-right: #cf2323 solid 5px;
+     height:715px;
+}
+
+.blockCommandesClient{
+     text-align: center;
+
+}
+
+.titleCoordClient{
+     display: inline-block;
+     margin:100px; 
+     font-family: 'poppins', sans-serif;
+     font-weight: bold;
+     font-size: 18px;
+     color:red;
+}
+
+.titleCommandesClient{
+     font-family: 'poppins', sans-serif;
+     font-weight: bold;
+     font-size: 18px;
+     color:red;
+     margin-top:100px;
+     margin-bottom: 100px;
+}
+
+.listCoordClient span{
+     
+     margin-left:70px;
+     font-weight: bold;
+
+}
+
+.listCommandesClient a{
+     
+     font-weight: bold;
+
+}
+.blockItemsLineId, .blockItems, .blockQuantité{
+     display: inline-block;
+     float:left;
+     margin-right:60px;
+
+}
+
+.blockItemsLineId, .blockItems, .blockQuantité, .blockPrixUnité{
+     margin-top:20px;
+     margin-bottom: 20px;
+}
+
+.blockItemsLineId{
+     margin-left: 20px;
+}
+
+.blockPrixTotal{
+     
+     margin-bottom: 20px;
+     margin-left: 20px;
+}
+
+.tableauCommand{
+     margin-left:auto;
+     margin-right: auto;
+     width:650px;
+     border: #cf2323 solid 5px;
+     margin-top: 200px;
+}
+
+.titleSection{
+     font-weight: bold;
+     color:red;
+     margin-bottom: 20px;
 }
 
 .tableau{
@@ -1381,6 +1460,7 @@
      overflow: hidden;
      padding-left: 40px;
      padding-bottom:50px;
+
 
 
 }
@@ -1408,6 +1488,28 @@
 
 .titreCase{
      text-align: center;
+}
+
+.manager{
+    color: red;
+}
+
+.emptyClients{
+    text-align: center;
+}
+
+.listClientsTitle{
+    text-align: center;
+    color: red;
+    font-weight: bold;
+    font-size: 16px;
+    margin-top:  100px;
+    margin-bottom:  100px;
+}
+
+.containerForm{
+     display:inline-block;
+     
 }
 
 

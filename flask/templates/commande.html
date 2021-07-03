@@ -1,8 +1,67 @@
 {% extends "index.html" %}
-{% extends "index.html" %}
 {% block navlinks %}
     <li> <a href="{{url_for('home')}}">Accueil</a> </li>
-    <li> <a href="{{url_for('clients')}}">Clients</a> </li>
+    <li class="active"> <a href="{{url_for('clients')}}">Clients</a> </li>
     <li> <a href="{{url_for('employes')}}"> Employés</a> </li>
-    <li class="active"> <a href="{{url_for('addcommand')}}">Commander</a> </li>
+    <li> <a href="{{url_for('addcommand')}}">Commander</a> </li>
+{% endblock %}
+{% block header%}
+{% for commande in uneCommande %}
+        <!-- header inner -->
+        <div class="headersHome">
+            <div class="headersHomeTitles">
+                <span>INFORMATIONS SUR LA COMMANDE N°{{commande.invoice_id}}</span>
+            </div>
+        </div>
+{% endfor %}
+{% block contents %}
+<div class="tableauCommand">
+
+		<div class="blockItemsLineId">
+            <div class="titleSection">
+                <span>N° ligne</span>
+            </div>
+			{% for itemCommand in itemsCommand %}
+        	<span>{{itemCommand.invoice_line_id}}</span><br>
+        	{% endfor %}
+		</div>
+    
+    	<div class="blockItems">
+            <div class="titleSection">
+                <span>Titre(s)</span>
+            </div>
+    		{% for nomChanson in nomChansons %}
+    		<span>{{nomChanson.name}}</span><br>
+    		{% endfor %}
+    	</div>
+    
+        <div class="blockQuantité">
+            <div class="titleSection">
+                <span>Quantité</span>
+            </div>
+        	{% for itemCommand in itemsCommand %}
+        	<span>{{itemCommand.quantity}}</span><br>
+        	{% endfor %}
+        </div>
+
+        <div class="blockPrixUnité">
+            <div class="titleSection">
+                <span>Prix unité</span>
+            </div>
+            {% for itemCommand in itemsCommand %}
+            <span>{{itemCommand.unit_price}}€</span><br>
+            {% endfor %}
+        </div>
+
+        <div class="blockPrixTotal">
+            <div class="titleSection">
+                <span>Prix total</span>
+            </div>
+            
+            <span>{{prixTot}}€</span><br>
+            
+        </div>
+    
+</div>
+{% endblock %}
 {% endblock %}

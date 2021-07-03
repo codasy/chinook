@@ -6,23 +6,23 @@
     <li> <a href="{{url_for('addcommand')}}">Commander</a> </li>
 {% endblock %}
 {% block header%}
-{% for album in unAlbum %}
+{% for genre in unGenre %}
         <!-- header inner -->
         <div class="headersHome">
             <div class="headersHomeTitles">
-                <span class="infoAlbumTitle">CHANSONS DE L'ALBUM</span> <span>{{album.title}}
+                <span class="infoAlbumTitle">CHANSONS </span> <span>{{genre.name}}
             </div>
         </div>
 {% endfor %}
 {% block contents %}
 <div class="tableau">
-    {% for chansonAlbum in chansonsAlbum %}
+    {% for chansonGenre in chansonsGenre %}
         <div class="caseTableau">
             <div class="imgCase">
               <img src="{{url_for('static', filename='images/logo.jpg')}}"/>
             </div>
             <div class="titreCase">
-                <span><a href="">{{chansonAlbum.name}}</a></span>
+                <span><a href="">{{chansonGenre.name}}</a></span>
             </div>
         </div>
     {% endfor %}
